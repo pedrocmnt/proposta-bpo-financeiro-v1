@@ -706,21 +706,46 @@
     max-width:620px;
     margin:0 auto 28px;
   }
+  .final-cta .cta-actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
   .final-cta .btn{
     display:inline-flex;
     align-items:center;
+    justify-content:center;
     gap:12px;
     background:var(--wine);
     color:var(--bone);
     padding:16px 32px;
+    min-width:210px;
     text-decoration:none;
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
     letter-spacing:0.06em;
     text-transform:uppercase;
-    transition:background .2s ease;
+    transition:background .2s ease, border-color .2s ease;
+    border:1px solid var(--wine);
   }
-  .final-cta .btn:hover{background:var(--wine-light);}
+  .final-cta .btn:hover{
+    background:var(--wine-light);
+    border-color:var(--wine-light);
+  }
+  .final-cta .btn.secondary{
+    background:transparent;
+    border-color:var(--line-strong);
+  }
+  .final-cta .btn.secondary:hover{
+    background:var(--ink-3);
+    border-color:var(--bone-faint);
+  }
+  @media (max-width:560px){
+    .final-cta .cta-actions{flex-direction:column;}
+    .final-cta .btn{width:100%;}
+  }
 
   footer{
     padding:40px 0 60px;
@@ -1124,7 +1149,10 @@
 
   <div class="final-cta">
     <h3 class="serif">Pronto para transformar o financeiro em uma área de gestão?</h3>
-    <a class="btn" href="mailto:contato@suaempresa.com.br">Falar sobre a proposta →</a>
+    <div class="cta-actions">
+      <a class="btn" href="mailto:santiancarminattp@gmail.com">Enviar e-mail →</a>
+      <a class="btn secondary" href="https://wa.me/5549998212155?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20proposta%20de%20BPO%20e%20consultoria%20financeira." target="_blank" rel="noopener noreferrer">Falar no WhatsApp →</a>
+    </div>
   </div>
 </section>
 
